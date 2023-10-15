@@ -1,5 +1,5 @@
 1.В чем основное преимущество IoC?
-Inversion of Control - описывает каждую зависимость отдельно,
+Inversion of Control - позволяет передать управление нашими компонентами Spring framework,чтобы он сам их хранил, настраивал и создавал, описывает каждую зависимость отдельно,
 позволяет использовать готовый настроенный объект, без прямого вызова конструктора.
 
 2.Чем (в общих чертах) отличается Container и Context?
@@ -16,26 +16,16 @@ Singleton бины создаются сразу, а не при первом о
 
 6.Привести пример конфигурации, при котором необходимо совместить два подхода: Annotation config, Java Code config.
 
-@Configuration
 @ComponentScan(basePackages = {"com.selivanov"})
 public class AnnotationConfig {
     @Bean
+       public Employee employee() {
 
+       }
 }
 
-@Configuration
-public class JavaCodeConfig {
-    @Bean
-    public Employee employee() {
-     
-    }
-}
-
-@Configuration
-@Import({AnnotationConfig.class, JavaCodeConfig.class})
-public class MainConfig {
-    
-}
+AnnotationConfigApplicationContext context =
+    new AnnotationConfigApplicationContext(AnnotationConfig.class);
 
 7.Почему в Части 1 Задании 5 такой результат, несмотря на использование Singleton?
 Бин создается сразу после прочтения container конфиг. файла и создается один экземпляр объекта для данного бина и этот экземпляр возвращается при всех запросах(ссылки которого равны).
