@@ -24,7 +24,7 @@ public class CarRepository {
                     BigDecimal price = resultSet.getBigDecimal("price");
                     String owner = resultSet.getString("owner");
                     Date year = resultSet.getDate("year");
-                    customerList.add(new Car(id, model, price, owner, year));
+                    customerList.add(new Car(id, model, owner, price, year));
                 }
                 return customerList;
             }
@@ -38,8 +38,9 @@ public class CarRepository {
         try (PreparedStatement statement = jdbcConnection.getConnection().prepareStatement(sql)) {
             statement.setInt(1, Types.NULL);
             statement.setString(2, car.getModel());
-            statement.setBigDecimal(3, car.getPrice());
-            statement.setString(4, car.getOwner());
+            statement.setString(3, car.getOwner());
+            statement.setBigDecimal(4, car.getPrice());
+
             statement.setDate(5, car.getYear());
 
             return statement.executeUpdate() > 0;

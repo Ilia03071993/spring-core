@@ -16,10 +16,9 @@ public class Main {
     public static void main(String[] args) {
         BigDecimal decimal = new BigDecimal("2000.23");
         Date date = new Date(1993-10-25);
-        Car car = new Car(null,"kia",decimal ,"Jack",date);
+        Car car = new Car(null,"kia","Jack",decimal,date);
         AnnotationConfigApplicationContext context1 = new AnnotationConfigApplicationContext(JavaCodeConfiguration.class);
         JdbcConnection jdbc =(JdbcConnection) context1.getBean("jdbc");
-        jdbc.init();
 
         AnnotationConfigApplicationContext context2 = new AnnotationConfigApplicationContext(AnnotationConfig.class);
         CarRepository bean = context2.getBean(CarRepository.class);

@@ -6,19 +6,20 @@ import java.sql.Date;
 public class Car {
     private Integer id;
     private String model;
-    private BigDecimal price;
     private String owner;
+    private BigDecimal price;
+
     private java.sql.Date year;
 
-    public Car(Integer id, String model, BigDecimal price, String owner, Date year) {
+    public Car(Integer id, String model, String owner, BigDecimal price, Date year) {
         this.id = id;
         this.model = model;
-        this.price = price;
         this.owner = owner;
+        this.price = price;
         this.year = year;
     }
 
-    public Integer getId () {
+    public Integer getId() {
         return id;
     }
 
@@ -26,12 +27,12 @@ public class Car {
         return model;
     }
 
-    public BigDecimal getPrice() {
-        return price;
-    }
-
     public String getOwner() {
         return owner;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
     }
 
     public java.sql.Date getYear() {
