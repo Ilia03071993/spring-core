@@ -10,8 +10,8 @@ public class Main {
     public static void main(String[] args) {
         //1.
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AnnotationConfig.class);
-
-        Person personBean = context.getBean(Person.class);
+//
+//        Person personBean = context.getBean(Person.class);
 //        System.out.println(personBean);
         //2.
         Employee employeeBean = context.getBean(Employee.class);
