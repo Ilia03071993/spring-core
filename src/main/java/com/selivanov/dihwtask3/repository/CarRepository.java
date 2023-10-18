@@ -21,8 +21,8 @@ public class CarRepository {
                 while (resultSet.next()) {
                     Integer id = resultSet.getInt("id");
                     String model = resultSet.getString("model");
-                    BigDecimal price = resultSet.getBigDecimal("price");
                     String owner = resultSet.getString("owner");
+                    BigDecimal price = resultSet.getBigDecimal("price");
                     Date year = resultSet.getDate("year");
                     customerList.add(new Car(id, model, owner, price, year));
                 }

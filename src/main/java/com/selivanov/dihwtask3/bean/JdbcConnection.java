@@ -32,9 +32,9 @@ public class JdbcConnection {
     @PreDestroy
     public void destroy() {
         try {
-            if (connection != null) {
+           if (connection != null) {
                 connection.close();
-            }
+           }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

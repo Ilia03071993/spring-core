@@ -22,7 +22,9 @@ public class Main {
 
         AnnotationConfigApplicationContext context2 = new AnnotationConfigApplicationContext(AnnotationConfig.class);
         CarRepository bean = context2.getBean(CarRepository.class);
-       bean.addCar(car);
-//        jdbc.destroy();
+     //   bean.findAllCars();
+        boolean b = bean.addCar(car);
+        System.out.println(b);
+        // jdbc.destroy();
     }
 }
