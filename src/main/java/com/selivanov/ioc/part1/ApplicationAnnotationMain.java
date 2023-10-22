@@ -1,7 +1,7 @@
-package com.selivanov.part1;
+package com.selivanov.ioc.part1;
 
-import com.selivanov.part1.bean.Person;
-import com.selivanov.part1.config.AnnotationConfig;
+import com.selivanov.ioc.part1.config.AnnotationConfig;
+import com.selivanov.ioc.part1.bean.Person;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class ApplicationAnnotationMain {

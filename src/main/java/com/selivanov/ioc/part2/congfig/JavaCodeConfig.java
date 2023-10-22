@@ -1,9 +1,6 @@
-package com.selivanov.part2.congfig;
+package com.selivanov.ioc.part2.congfig;
 
-import com.selivanov.part2.bean.Employee;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
 
 //1
 @Configuration

@@ -7,12 +7,18 @@ import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
 public class CarRepository {
-    private JdbcConnection jdbcConnection;
+    private final JdbcConnection jdbcConnection;
+
+    @Autowired
+    public CarRepository(JdbcConnection jdbcConnection) {
+        this.jdbcConnection = jdbcConnection;
+    }
 
     public List<Car> findAllCars() {
         try (Statement statement = jdbcConnection.getConnection().createStatement()) {
@@ -23,8 +29,8 @@ public class CarRepository {
                     String model = resultSet.getString("model");
                     String owner = resultSet.getString("owner");
                     BigDecimal price = resultSet.getBigDecimal("price");
-                    Date year = resultSet.getDate("year");
-                    customerList.add(new Car(id, model, owner, price, year));
+                    LocalDate date = resultSet.getDate("year").toLocalDate();
+                    customerList.add(new Car(id, model, owner, price, date));
                 }
                 return customerList;
             }
@@ -41,7 +47,7 @@ public class CarRepository {
             statement.setString(3, car.getOwner());
             statement.setBigDecimal(4, car.getPrice());
 
-            statement.setDate(5, car.getYear());
+            statement.setDate(5, Date.valueOf(car.getDate()));
 
             return statement.executeUpdate() > 0;
         } catch (SQLException e) {

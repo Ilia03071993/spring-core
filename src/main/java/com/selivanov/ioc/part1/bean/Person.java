@@ -1,4 +1,4 @@
-package com.selivanov.part1.bean;
+package com.selivanov.ioc.part1.bean;
 
 import org.springframework.stereotype.Component;
 //@Scope("prototype")

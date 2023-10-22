@@ -2,6 +2,7 @@ package com.selivanov.dihwtask3.bean;
 
 import java.math.BigDecimal;
 import java.sql.Date;
+import java.time.LocalDate;
 
 public class Car {
     private Integer id;
@@ -9,14 +10,14 @@ public class Car {
     private String owner;
     private BigDecimal price;
 
-    private java.sql.Date year;
+    private LocalDate date;
 
-    public Car(Integer id, String model, String owner, BigDecimal price, Date year) {
+    public Car(Integer id, String model, String owner, BigDecimal price, LocalDate date) {
         this.id = id;
         this.model = model;
         this.owner = owner;
         this.price = price;
-        this.year = year;
+        this.date = date;
     }
 
     public Integer getId() {
@@ -35,7 +36,18 @@ public class Car {
         return price;
     }
 
-    public java.sql.Date getYear() {
-        return (java.sql.Date) year;
+    public LocalDate getDate() {
+        return date;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "id=" + id +
+                ", model='" + model + '\'' +
+                ", owner='" + owner + '\'' +
+                ", price=" + price +
+                ", year=" + date +
+                '}';
     }
 }

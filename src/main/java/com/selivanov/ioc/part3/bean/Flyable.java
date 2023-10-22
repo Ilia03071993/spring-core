@@ -1,4 +1,4 @@
-package com.selivanov.part3.bean;
+package com.selivanov.ioc.part3.bean;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;

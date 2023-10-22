@@ -1,8 +1,7 @@
-package com.selivanov.part2;
+package com.selivanov.ioc.part2;
 
-import com.selivanov.part2.bean.Employee;
+import com.selivanov.ioc.part2.bean.Employee;
 
-import com.selivanov.part2.congfig.JavaCodeConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {

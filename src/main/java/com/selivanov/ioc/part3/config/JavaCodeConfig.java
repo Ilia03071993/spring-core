@@ -1,9 +1,6 @@
-package com.selivanov.part3.config;
+package com.selivanov.ioc.part3.config;
 
-import com.selivanov.part3.bean.Bird;
-import com.selivanov.part3.bean.Flyable;
-import com.selivanov.part3.bean.Helicopter;
-import com.selivanov.part3.bean.Plane;
+import com.selivanov.ioc.part3.bean.Flyable;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 //1.

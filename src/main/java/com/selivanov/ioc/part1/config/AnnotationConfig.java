@@ -1,4 +1,4 @@
-package com.selivanov.part1.config;
+package com.selivanov.ioc.part1.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Scope;

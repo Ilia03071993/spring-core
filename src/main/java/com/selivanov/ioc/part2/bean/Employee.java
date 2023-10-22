@@ -1,4 +1,4 @@
-package com.selivanov.part2.bean;
+package com.selivanov.ioc.part2.bean;
 
 import jdk.jfr.Name;
 import org.springframework.beans.factory.annotation.Value;
